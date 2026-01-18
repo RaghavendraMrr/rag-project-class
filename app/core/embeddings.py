@@ -7,6 +7,9 @@ from langchain_openai import OpenAIEmbeddings
 from app.config import get_settings
 from app.utils.logger import get_logger
 
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
 logger = get_logger(__name__)
 
 
@@ -20,10 +23,14 @@ def get_embeddings() -> OpenAIEmbeddings:
     settings = get_settings()
     logger.info(f"Initializing embeddings model: {settings.embedding_model}")
 
-    embeddings = OpenAIEmbeddings(
+    # embeddings = OpenAIEmbeddings(
+    #     model=settings.embedding_model,
+    #     openai_api_key=settings.openai_api_key,
+    # )
+    
+    embeddings = GoogleGenerativeAIEmbeddings(
         model=settings.embedding_model,
-        openai_api_key=settings.openai_api_key,
-    )
+        )
 
     logger.info("Embeddings model initialized successfully")
     return embeddings

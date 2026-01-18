@@ -30,8 +30,8 @@ class Settings(BaseSettings):
     chunk_overlap: int = 200
 
     # Model Configuration
-    embedding_model: str = "text-embedding-3-small"
-    llm_model: str = "gpt-4o-mini"
+    embedding_model: str = "models/embedding-001"
+    llm_model: str = "gemini-1.5-flash"
     llm_temperature: float = 0.0
 
     # Retrieval Settings
