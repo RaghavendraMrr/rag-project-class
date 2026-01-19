@@ -15,8 +15,8 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # OpenAI Configuration
-    openai_api_key: str
+    # # OpenAI Configuration
+    # openai_api_key: str
     
     
     #Gemini configuration
