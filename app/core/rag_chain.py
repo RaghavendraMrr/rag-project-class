@@ -5,6 +5,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 from app.config import get_settings
 from app.core.vector_store import VectorStoreService
@@ -58,11 +59,17 @@ class RAGChain:
         # Initialize evaluator (lazy load)
         self._evaluator = None
 
-        # Initialize LLM
-        self.llm = ChatOpenAI(
+        # # Initialize LLM
+        # self.llm = ChatOpenAI(
+        #     model=settings.llm_model,
+        #     temperature=settings.llm_temperature,
+        #     openai_api_key=settings.openai_api_key,
+        # )
+        
+        self.llm=ChatGoogleGenerativeAI(
             model=settings.llm_model,
             temperature=settings.llm_temperature,
-            openai_api_key=settings.openai_api_key,
+            api_key=settings.GOOGLE_API_KEY
         )
 
         # Create prompt template

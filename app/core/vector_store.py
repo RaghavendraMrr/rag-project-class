@@ -18,7 +18,7 @@ logger = get_logger(__name__)
 settings = get_settings()
 
 # Embedding dimension for text-embedding-3-small
-EMBEDDING_DIMENSION = 1536
+EMBEDDING_DIMENSION = 3072
 
 
 @lru_cache
