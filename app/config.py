@@ -17,6 +17,11 @@ class Settings(BaseSettings):
 
     # OpenAI Configuration
     openai_api_key: str
+    
+    
+    #Gemini configuration
+    GOOGLE_API_KEY:str
+    
 
     # Qdrant Cloud Configuration
     qdrant_url: str
@@ -31,7 +36,7 @@ class Settings(BaseSettings):
 
     # Model Configuration
     embedding_model: str = "models/embedding-001"
-    llm_model: str = "gemini-1.5-flash"
+    llm_model: str = "gemini-2.5-flash"
     llm_temperature: float = 0.0
 
     # Retrieval Settings
