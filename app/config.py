@@ -18,7 +18,6 @@ class Settings(BaseSettings):
     # # OpenAI Configuration
     # openai_api_key: str
     
-    
     #Gemini configuration
     GOOGLE_API_KEY:str
     
@@ -58,7 +57,7 @@ class Settings(BaseSettings):
     api_port: int = 8000
 
     # Application Info
-    app_name: str = "RAG Q&A System"
+    app_name: str = "RAG Q&A System V1"
     app_version: str = "0.1.0"
 
 
